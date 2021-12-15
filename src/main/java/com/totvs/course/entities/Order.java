@@ -12,7 +12,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.MappedSuperclass;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -97,11 +96,11 @@ public class Order implements Serializable {
 	public void setPayment(Payment payment) {
 		this.payment = payment;
 	}
-	
+
 	public Double getTotal() {
 		double total = 0.0;
 		for (OrderItem x : items) {
-			total+= x.getSubTotal();
+			total += x.getSubTotal();
 		}
 		return total;
 	}
